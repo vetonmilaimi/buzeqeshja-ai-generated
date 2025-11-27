@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Stats from '../components/Stats';
+import Services from '../components/Services';
+import Testimonials from '../components/Testimonials';
+import DoctorProfile from '../components/DoctorProfile';
+import ClinicGallery from '../components/ClinicGallery';
+import FAQ from '../components/FAQ';
+import ContactForm from '../components/ContactForm';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Buzëqeshja - Klinika Dentare Profesionale">
+	<Header client:load />
+	<main>
+		<Hero />
+		<Stats />
+		<section id="services">
+			<Services />
+		</section>
+		<Testimonials />
+		<DoctorProfile />
+		<section id="clinic">
+			<ClinicGallery />
+		</section>
+		<FAQ client:load />
+		<section id="contact">
+			<ContactForm client:load />
+		</section>
+	</main>
+	<Footer />
+</Layout>

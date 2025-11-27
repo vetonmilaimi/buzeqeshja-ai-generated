@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import AppointmentForm from '../components/AppointmentForm';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Cakto Termin - Buzëqeshja">
+	<Header client:load />
+	<main>
+		{/* Hero Section */}
+		<section class="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-accent/20 to-primary/5">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-12 max-w-3xl mx-auto">
+					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+						Cakto një <span class="text-primary">Termin</span>
+					</h1>
+					<p class="text-muted-foreground text-lg md:text-xl leading-relaxed mb-4">
+						Zgjidhni datën dhe orën që ju përshtatet më mirë. Ekipi ynë profesional do t'ju kontaktojë brenda 24 orëve për të konfirmuar terminin tuaj.
+					</p>
+					<p class="text-sm text-muted-foreground">
+						✓ Konfirmim i shpejtë &nbsp;•&nbsp; ✓ Orari fleksibël &nbsp;•&nbsp; ✓ Staf profesional
+					</p>
+				</div>
+
+				{/* Appointment Form */}
+				<div className="max-w-6xl mx-auto">
+					<AppointmentForm client:load />
+				</div>
+
+				{/* Info Cards */}
+				<div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mt-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="font-bold text-lg mb-2 text-center">Orari Fleksibël</h3>
+						<p class="text-sm text-muted-foreground text-center leading-relaxed">E Hënë - E Premte: 09:00 - 18:00</p>
+						<p class="text-sm text-muted-foreground text-center">E Shtunë: 09:00 - 14:00</p>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="font-bold text-lg mb-2 text-center">Konfirmim i Shpejtë</h3>
+						<p class="text-sm text-muted-foreground text-center leading-relaxed">Përgjigje brenda 24 orëve nga ekipi ynë profesional</p>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+							</svg>
+						</div>
+						<h3 class="font-bold text-lg mb-2 text-center">Kontakt Direkt</h3>
+						<p class="text-sm text-muted-foreground text-center leading-relaxed">+383 44 123 456</p>
+						<p class="text-xs text-muted-foreground text-center mt-1">info@buzeqeshja.com</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
