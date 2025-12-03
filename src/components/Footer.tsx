@@ -8,9 +8,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
+                <span className="text-white font-bold text-xl">K</span>
               </div>
-              <h3 className="text-2xl font-bold">Buzëqeshja</h3>
+              <h3 className="text-2xl font-bold">Klinika Ime</h3>
             </div>
             <p className="text-white/80 leading-relaxed">
               Klinika juaj e besuar për një buzëqeshje të shëndetshme dhe të bukur.
@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span className="text-white/80">info@buzeqeshja.com</span>
+                <span className="text-white/80">info@klinika-ime.com</span>
               </li>
             </ul>
           </div>
@@ -88,7 +88,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="text-white/60">
-            &copy; {new Date().getFullYear()} Klinika Dentare Buzëqeshja. Të gjitha të drejtat e rezervuara.
+            &copy; {new Date().getFullYear()} Klinika Ime. Të gjitha të drejtat e rezervuara.
           </p>
         </div>
       </div>

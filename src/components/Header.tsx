@@ -83,9 +83,9 @@ const Header = () => {
             onClick={(e) => handleNavClick(e, '/')}
           >
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-xl">B</span>
+              <span className="text-white font-bold text-xl">K</span>
             </div>
-            <span className="text-2xl font-bold text-foreground">Buzëqeshja</span>
+            <span className="text-2xl font-bold text-foreground">Klinika Ime</span>
           </a>
         </div>
 

@@ -1,4 +1,4 @@
-# Buzëqeshja - Dental Clinic Landing Page
+# Klinika Ime - Dental Clinic Landing Page
 
 > 🤖 **This project was fully created using AI tools** - demonstrating the power of AI-assisted web development.
 
@@ -59,7 +59,7 @@ A modern, professional landing page for a dental clinic built with cutting-edge 
 ## 📁 Project Structure
 
 \`\`\`
-buzeqeshja/
+klinika-ime/
 ├── src/
 │   ├── components/
 │   │   ├── ui/              # Shadcn UI components
@@ -100,7 +100,7 @@ buzeqeshja/
 git clone <your-repo-url>
 
 # Navigate to project directory
-cd buzeqeshja
+cd klinika-ime
 
 # Install dependencies
 npm install
@@ -199,4 +199,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Made with 🤖 AI** | **Project Name**: Buzëqeshja (The Smile)
+**Made with 🤖 AI** | **Project Name**: Klinika Ime
