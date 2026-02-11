@@ -23,12 +23,58 @@ const AppointmentForm = () => {
     time: '',
     notes: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [resultMessage, setResultMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Appointment booked:', { ...formData, date });
-    // Handle form submission
-    alert('Kërkesa juaj për termin është dërguar me sukses! Do të kontaktoheni së shpejti.');
+    setResultMessage(null);
+    setErrorMessage(null);
+    setLoading(true);
+
+    (async () => {
+      try {
+        const apiBase = (import.meta as any).env?.PUBLIC_API_BASE || 'http://localhost:4000';
+        // Combine date + time into a single ISO string when possible
+        let dateStr = date ? date.toISOString() : new Date().toISOString();
+        if (date && formData.time) {
+          const d = new Date(date);
+          const [hours, minutes] = formData.time.split(':').map((v) => parseInt(v, 10));
+          d.setHours(hours, minutes || 0, 0, 0);
+          dateStr = d.toISOString();
+        }
+
+        const payload = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          date: dateStr,
+          message: formData.notes,
+        };
+
+        const res = await fetch(`${apiBase}/api/schedule`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body?.error || `Request failed with status ${res.status}`);
+        }
+
+        setResultMessage('Kërkesa juaj për termin është dërguar me sukses! Do të kontaktoheni së shpejti.');
+        setFormData({ name: '', email: '', phone: '', service: '', time: '', notes: '' });
+        setDate(new Date());
+      } catch (err: any) {
+        console.error('Booking error', err);
+        setErrorMessage(err?.message || 'Gabim gjatë dërgimit të kërkesës. Ju lutem provoni përsëri.');
+      } finally {
+        setLoading(false);
+      }
+    })();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -196,8 +242,15 @@ const AppointmentForm = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full" size="lg">
-              Konfirmo Terminin
+            {resultMessage && (
+              <div className="p-3 mb-2 text-sm text-green-800 bg-green-100 rounded">{resultMessage}</div>
+            )}
+            {errorMessage && (
+              <div className="p-3 mb-2 text-sm text-red-800 bg-red-100 rounded">{errorMessage}</div>
+            )}
+
+            <Button type="submit" className="w-full" size="lg" disabled={loading}>
+              {loading ? 'Duke dërguar...' : 'Konfirmo Terminin'}
             </Button>
           </form>
         </CardContent>
