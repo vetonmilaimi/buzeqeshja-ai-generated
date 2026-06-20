@@ -1,0 +1,10 @@
+{"level":"info","message":"Server listening on port 4000","timestamp":"2026-02-11 23:21:13"}
+{"level":"info","message":"[schedule] 2026-02-11T22:22:35.120Z - Request from ::1 - name=Veton Milaimi, email=veton.milaimi1@gmail.com, service=Zbardhimi i Dhëmbëve, date=2026-02-12T11:00:00.000Z","timestamp":"2026-02-11 23:22:35"}
+{"level":"warn","message":"TO_EMAIL not configured. Email will be logged instead of sent.","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"--- EMAIL PREVIEW ---","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"From: no-reply@example.com","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"To: (not configured)","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"Subject: Appointment request — Zbardhimi i Dhëmbëve — Veton Milaimi","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"HTML: \n    <h2>New appointment request</h2>\n    <p><strong>Name:</strong> Veton Milaimi</p>\n    <p><strong>Email:</strong> veton.milaimi1@gmail.com</p>\n    <p><strong>Phone:</strong> +38343932432</p>\n    <p><strong>Service:</strong> Zbardhimi i Dhëmbëve</p>\n    <p><strong>Date / Time:</strong> 2026-02-12T11:00:00.000Z</p>\n    <p><strong>Message:</strong> -</p>\n  ","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"--- END PREVIEW ---","timestamp":"2026-02-11 23:22:35"}
+{"level":"info","message":"[schedule] mailer result: {\n  accepted: [ [length]: 0 ],\n  rejected: [ [length]: 0 ],\n  envelope: { from: 'no-reply@example.com', to: [ [length]: 0 ] },\n  messageId: 'log-only-1770848555127'\n}","timestamp":"2026-02-11 23:22:35"}
